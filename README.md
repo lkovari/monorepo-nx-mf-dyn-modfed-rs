@@ -44,3 +44,7 @@ Monorepo Nx Microfrontend with Dynamic module federation - rspack
   --path=apps/main-host/src/app/shared/components/layout/layout \
   --standalone \
   --no-interactive
+  13. pnpm install tailwindcss @tailwindcss/postcss postcss --force
+  14. create postcssrc.json into workspace root 
+  15. add to all apps styles.css the @import "tailwindcss";
+  16. 

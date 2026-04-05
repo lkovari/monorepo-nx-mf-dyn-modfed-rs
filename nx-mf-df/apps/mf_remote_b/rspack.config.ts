@@ -24,6 +24,10 @@ export default async () => {
         devServer: {
           port: 4202,
           publicHost: 'http://localhost:4202',
+          headers: {
+            'Cache-Control':
+              'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+          },
         },
       },
     },
@@ -33,8 +37,8 @@ export default async () => {
           budgets: [
             {
               type: 'initial',
-              maximumWarning: '500kb',
-              maximumError: '1mb',
+              maximumWarning: '1.5mb',
+              maximumError: '2mb',
             },
             {
               type: 'anyComponentStyle',

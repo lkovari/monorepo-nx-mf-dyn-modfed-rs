@@ -43,8 +43,7 @@
     "serve": {
       "options": {
         "port": 4202
-      },
-      "dependsOn": ["main-host:serve"]
+      }
     }
   }
 }

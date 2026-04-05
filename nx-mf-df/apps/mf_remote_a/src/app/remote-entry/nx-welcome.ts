@@ -512,8 +512,7 @@ import { CommonModule } from '@angular/common';
         <!--  WELCOME  -->
         <div id="welcome">
           <h1>
-            <span> Hello there, </span>
-            Welcome mf_remote_a 👋
+            <span class="text-green-500">Welcome to the remote mf_remote_a app</span>
           </h1>
         </div>
         <!--  HERO  -->

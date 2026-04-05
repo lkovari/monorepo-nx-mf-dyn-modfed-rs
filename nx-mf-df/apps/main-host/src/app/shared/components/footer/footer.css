@@ -21,7 +21,7 @@
     font-size: clamp(0.75rem, 1.8vw, 0.875rem);
 }
 
-.footer-text lib-angular-version,
-.footer-text lib-nx-version {
+.footer-text nxmfdf-angular-version,
+.footer-text nxmfdf-nx-version {
     display: inline;
 }

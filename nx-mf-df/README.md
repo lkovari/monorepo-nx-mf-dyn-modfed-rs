@@ -1,96 +1,105 @@
-# NxMfDf
+# nx-mf-df
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+Nx workspace demonstrating **dynamic module federation**: a **main host** loads three Angular remotes at runtime using `@module-federation/enhanced` and a host manifest.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## Applications and ports
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+| App           | Port | Role |
+|---------------|------|------|
+| `main-host`   | 4200 | Host: shell layout, router, `module-federation.manifest.json` |
+| `mf_remote_a` | 4201 | Remote A, exposes `./Routes` |
+| `mf_remote_b` | 4202 | Remote B, exposes `./Routes` |
+| `mf_remote_c` | 4203 | Remote C, exposes `./Routes` |
 
-## Run tasks
+## Dynamic federation contract
 
-To run tasks with Nx use:
+- **Host manifest** (served by the host): [`apps/main-host/public/module-federation.manifest.json`](apps/main-host/public/module-federation.manifest.json) maps remote names to each remote’s `mf-manifest.json` URL (e.g. `http://localhost:4201/mf-manifest.json`).
+- **Bootstrap**: [`apps/main-host/src/main.ts`](apps/main-host/src/main.ts) loads that manifest, calls `registerRemotes`, then bootstraps the Angular app.
+- **Routes**: [`apps/main-host/src/app/app.routes.ts`](apps/main-host/src/app/app.routes.ts) uses `loadRemote('mf_remote_a/Routes')` (and `b`, `c`). These keys must stay aligned with:
+  - **TS path aliases** in [`tsconfig.base.json`](tsconfig.base.json) (`mf_remote_a/Routes`, etc.)
+  - **`exposes`** in each remote’s `module-federation.config.ts` (`./Routes` → `entry.routes.ts`)
 
-```sh
-npx nx <target> <project-name>
-```
+Do not rename remote names or expose keys casually; the host, manifest, and paths must stay in sync.
 
-For example:
+## Prerequisites
 
-```sh
-npx nx build myproject
-```
+- [pnpm](https://pnpm.io/)
+- Node.js compatible with this repo’s Angular/Nx versions
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
-```sh
-npx nx add @nx/react
-```
-
-Use the plugin's generator to create new projects. For example, to create a new React app or library:
+## Install
 
 ```sh
-# Generate an app
-npx nx g @nx/react:app demo
-
-# Generate a library
-npx nx g @nx/react:lib some-lib
+pnpm install
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+## Clear workspace caches
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
+If remote UI or builds look stale (old `remoteEntry.js`, Nx task outputs, or `dist`), from `nx-mf-df`:
 
 ```sh
-npx nx connect
+pnpm run clear-cache
 ```
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+See [`STALE_REMOTE_UI.md`](STALE_REMOTE_UI.md) for browser cache steps (`localhost:4200`–`4203`).
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Development: recommended startup (Option A)
 
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
+Dynamic federation needs the remotes **serving** their `mf-manifest.json` before or while you use the host. Use **four terminals**:
 
 ```sh
-npx nx g ci-workflow
+pnpm exec nx serve mf_remote_a
 ```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```sh
+pnpm exec nx serve mf_remote_b
+```
 
-## Install Nx Console
+```sh
+pnpm exec nx serve mf_remote_c
+```
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+```sh
+pnpm exec nx serve main-host
+```
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Then open:
 
-## Useful links
+- Host: http://localhost:4200  
+- Remote routes from host: http://localhost:4200/mf_remote_a , `/mf_remote_b`, `/mf_remote_c`
 
-Learn more:
+## Optional: host with dev remotes (Option B)
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+If your Nx setup supports it:
 
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```sh
+pnpm exec nx serve main-host --devRemotes=mf_remote_a,mf_remote_b,mf_remote_c
+```
+
+If this is unreliable locally, prefer Option A.
+
+## Verify remotes independently
+
+Before debugging the host, confirm each remote and its manifest:
+
+1. Serve each remote (ports 4201–4203).
+2. In the browser: `http://localhost:4201`, `4202`, `4203`.
+3. Manifest URLs: `http://localhost:4201/mf-manifest.json` (and 4202, 4203).
+
+Only then rely on the host loading federated routes.
+
+## Shared UI library
+
+[`libs/common-ui-lib`](libs/common-ui-lib) exposes `AngularVersion` and `NxVersion`. The host imports them via `@nx-mf-df/common-ui-lib` (see [`tsconfig.base.json`](tsconfig.base.json)).
+
+## Tests
+
+```sh
+pnpm exec nx test main-host
+pnpm exec nx test common-ui-lib
+```
+
+## Workspace graph
+
+```sh
+pnpm exec nx graph
+```

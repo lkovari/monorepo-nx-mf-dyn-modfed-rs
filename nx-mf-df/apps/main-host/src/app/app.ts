@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { Layout } from './shared/components/layout/layout';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
   selector: 'nxmfdf-root',
+  imports: [Layout],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
-  protected title = 'main-host';
-}
+export class App {}

@@ -1,6 +1,6 @@
 import { registerRemotes } from '@module-federation/enhanced/runtime';
 
-fetch('/module-federation.manifest.json')
+fetch(new URL('module-federation.manifest.json', document.baseURI).href)
   .then((res) => {
     if (!res.ok) {
       throw new Error(`Failed to load host manifest: ${res.status} ${res.statusText}`);

@@ -16,7 +16,9 @@
     "build:apps": "nx run-many --target=build --projects=main-host,mf_remote_a,mf_remote_b,mf_remote_c",
     "build:libs": "nx run-many --target=build --projects=common-ui-lib",
     "build:workspace": "nx run-many --target=build --projects=main-host,mf_remote_a,mf_remote_b,mf_remote_c,common-ui-lib",
-    "clear-cache": "bash scripts/clear-cache.sh"
+    "clear-cache": "bash scripts/clear-cache.sh",
+    "build:gh-pages": "bash scripts/gh-pages-build.sh",
+    "deploy:gh-pages": "npm run build:gh-pages && npx gh-pages -d dist/gh-pages --dotfiles"
   },
   "private": true,
   "devDependencies": {
@@ -62,6 +64,7 @@
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-playwright": "^1.6.2",
+    "gh-pages": "^6.3.0",
     "jsdom": "^27.1.0",
     "jsonc-eslint-parser": "^2.1.0",
     "ng-packagr": "~21.2.0",

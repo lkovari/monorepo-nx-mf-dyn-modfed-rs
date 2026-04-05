@@ -68,6 +68,15 @@ Monorepo Nx Microfrontend with Dynamic module federation - rspack
 
 ---
 
+## Setup gh-pages build and deploy
+  1. pnpm add -D gh-pages
+  2. add script   "build:pages": "nx build main-host --base-href=/REPO_NAME/", and "deploy:pages": "pnpm run build:pages && gh-pages -d dist/apps/main-host/browser"
+  3. add gh-pages-build.sh
+  4. modify the fetch module-federation.manifest.json in main.ts 
+
+
+---
+
 ## 1. Angular-Rspack
 
 This workspace builds the host and remote Angular applications with **Rspack** through Nx’s **`@nx/angular-rspack`** integration, instead of the default Angular Webpack or Vite app builder.

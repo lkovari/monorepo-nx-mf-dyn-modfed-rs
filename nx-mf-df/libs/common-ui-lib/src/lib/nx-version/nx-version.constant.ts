@@ -1,0 +1,1 @@
+export const FAKE_NX_VERSION = '22.6.4'; // fake nx version

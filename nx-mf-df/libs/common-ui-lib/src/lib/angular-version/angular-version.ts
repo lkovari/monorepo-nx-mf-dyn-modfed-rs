@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { NgStyle } from '@angular/common';
+import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { VERSION } from '@angular/core';
 
 @Component({
   selector: 'nxmfdf-angular-version',
-  imports: [],
+  imports: [NgStyle],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './angular-version.html',
   styleUrl: './angular-version.css',
 })
-export class AngularVersion {}
+export class AngularVersion {
+  protected readonly angularVersion = signal(VERSION.full);
+  textStyle = input<{ [key: string]: string }>({});
+}

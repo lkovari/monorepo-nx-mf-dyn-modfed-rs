@@ -1,4 +1,3 @@
-export * from './lib/common-ui-lib/common-ui-lib';
 
 export * from './lib/angular-version/angular-version';
 

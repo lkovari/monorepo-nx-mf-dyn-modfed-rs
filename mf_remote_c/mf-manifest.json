@@ -21,7 +21,7 @@
     "globalName": "mf_remote_c",
     "pluginVersion": "2.3.1",
     "prefetchInterface": false,
-    "publicPath": "auto"
+    "publicPath": "/monorepo-nx-mf-dyn-modfed-rs/mf_remote_c/"
   },
   "shared": [
     {

@@ -1,0 +1,1 @@
+export const __rspack_esm_id="261";export const __rspack_esm_ids=["261"];export const __webpack_modules__={8740(_,e,o){o.d(e,{remoteRoutes:()=>t});let t=[{path:"",component:o(282).b}]}};

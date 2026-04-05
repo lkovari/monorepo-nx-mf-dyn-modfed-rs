@@ -1,5 +1,5 @@
 {
-  "mf_remote_a": "http://localhost:4201/mf-manifest.json",
-  "mf_remote_b": "http://localhost:4202/mf-manifest.json",
-  "mf_remote_c": "http://localhost:4203/mf-manifest.json"
+  "mf_remote_a": "/monorepo-nx-mf-dyn-modfed-rs/mf_remote_a/mf-manifest.json",
+  "mf_remote_b": "/monorepo-nx-mf-dyn-modfed-rs/mf_remote_b/mf-manifest.json",
+  "mf_remote_c": "/monorepo-nx-mf-dyn-modfed-rs/mf_remote_c/mf-manifest.json"
 }

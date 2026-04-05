@@ -1,14 +1,14 @@
 {
-  "id": "main_host",
-  "name": "main_host",
+  "id": "mf_remote_b",
+  "name": "mf_remote_b",
   "metaData": {
-    "name": "main_host",
+    "name": "mf_remote_b",
     "type": "app",
     "buildInfo": {
       "buildVersion": "local"
     },
     "remoteEntry": {
-      "name": "",
+      "name": "remoteEntry.js",
       "path": "",
       "type": "module"
     },
@@ -18,7 +18,7 @@
       "zip": "",
       "api": ""
     },
-    "globalName": "main_host",
+    "globalName": "mf_remote_b",
     "pluginVersion": "2.3.1",
     "prefetchInterface": false,
     "publicPath": "auto"
@@ -32,18 +32,19 @@
       "eager": true,
       "name": "@angular/common/http",
       "version": "21.2.7",
-      "id": "main_host:@angular/common/http",
+      "id": "mf_remote_b:@angular/common/http",
       "assets": {
         "js": {
           "async": [],
           "sync": [
-            "main.209158bc.js"
+            "remoteEntry.js",
+            "main.68a4d63c.js"
           ]
         },
         "css": {
           "async": [],
           "sync": [
-            "styles.74762ce0.css"
+            "styles.4a3a6075.css"
           ]
         }
       },
@@ -59,18 +60,19 @@
       "eager": true,
       "name": "@angular/common",
       "version": "21.2.7",
-      "id": "main_host:@angular/common",
+      "id": "mf_remote_b:@angular/common",
       "assets": {
         "js": {
           "async": [],
           "sync": [
-            "main.209158bc.js"
+            "remoteEntry.js",
+            "main.68a4d63c.js"
           ]
         },
         "css": {
           "async": [],
           "sync": [
-            "styles.74762ce0.css"
+            "styles.4a3a6075.css"
           ]
         }
       },
@@ -86,18 +88,19 @@
       "eager": true,
       "name": "@angular/core/primitives/di",
       "version": "21.2.7",
-      "id": "main_host:@angular/core/primitives/di",
+      "id": "mf_remote_b:@angular/core/primitives/di",
       "assets": {
         "js": {
           "async": [],
           "sync": [
-            "main.209158bc.js"
+            "remoteEntry.js",
+            "main.68a4d63c.js"
           ]
         },
         "css": {
           "async": [],
           "sync": [
-            "styles.74762ce0.css"
+            "styles.4a3a6075.css"
           ]
         }
       },
@@ -113,18 +116,19 @@
       "eager": true,
       "name": "@angular/core/primitives/signals",
       "version": "21.2.7",
-      "id": "main_host:@angular/core/primitives/signals",
+      "id": "mf_remote_b:@angular/core/primitives/signals",
       "assets": {
         "js": {
           "async": [],
           "sync": [
-            "main.209158bc.js"
+            "remoteEntry.js",
+            "main.68a4d63c.js"
           ]
         },
         "css": {
           "async": [],
           "sync": [
-            "styles.74762ce0.css"
+            "styles.4a3a6075.css"
           ]
         }
       },
@@ -140,18 +144,19 @@
       "eager": true,
       "name": "@angular/core",
       "version": "21.2.7",
-      "id": "main_host:@angular/core",
+      "id": "mf_remote_b:@angular/core",
       "assets": {
         "js": {
           "async": [],
           "sync": [
-            "main.209158bc.js"
+            "remoteEntry.js",
+            "main.68a4d63c.js"
           ]
         },
         "css": {
           "async": [],
           "sync": [
-            "styles.74762ce0.css"
+            "styles.4a3a6075.css"
           ]
         }
       },
@@ -167,18 +172,19 @@
       "eager": true,
       "name": "@angular/platform-browser",
       "version": "21.2.7",
-      "id": "main_host:@angular/platform-browser",
+      "id": "mf_remote_b:@angular/platform-browser",
       "assets": {
         "js": {
           "async": [],
           "sync": [
-            "main.209158bc.js"
+            "remoteEntry.js",
+            "main.68a4d63c.js"
           ]
         },
         "css": {
           "async": [],
           "sync": [
-            "styles.74762ce0.css"
+            "styles.4a3a6075.css"
           ]
         }
       },
@@ -194,7 +200,7 @@
       "name": "@angular/router",
       "version": "21.2.7",
       "eager": false,
-      "id": "main_host:@angular/router",
+      "id": "mf_remote_b:@angular/router",
       "assets": {
         "js": {
           "async": [],
@@ -211,32 +217,28 @@
       "usedIn": [],
       "usedExports": [],
       "fallback": ""
-    },
-    {
-      "singleton": true,
-      "requiredVersion": "^0.0.1",
-      "shareScope": "default",
-      "eager": false,
-      "name": "@nx-mf-df/common-ui-lib",
-      "version": "0.0.1",
-      "id": "main_host:@nx-mf-df/common-ui-lib",
-      "assets": {
-        "js": {
-          "async": [],
-          "sync": [
-            "631.d00e3241.js"
-          ]
-        },
-        "css": {
-          "async": [],
-          "sync": []
-        }
-      },
-      "usedIn": [],
-      "usedExports": [],
-      "fallback": ""
     }
   ],
   "remotes": [],
-  "exposes": []
+  "exposes": [
+    {
+      "path": "./Routes",
+      "id": "mf_remote_b:Routes",
+      "name": "Routes",
+      "requires": [],
+      "file": "apps/mf_remote_b/src/app/remote-entry/entry.routes.ts",
+      "assets": {
+        "js": {
+          "sync": [
+            "__federation_expose_Routes.306bc801.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      }
+    }
+  ]
 }

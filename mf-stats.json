@@ -1,0 +1,242 @@
+{
+  "id": "main_host",
+  "name": "main_host",
+  "metaData": {
+    "name": "main_host",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "local"
+    },
+    "remoteEntry": {
+      "name": "",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "main_host",
+    "pluginVersion": "2.3.1",
+    "prefetchInterface": false,
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/common/http",
+      "version": "21.2.7",
+      "id": "main_host:@angular/common/http",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/common",
+      "version": "21.2.7",
+      "id": "main_host:@angular/common",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/di",
+      "version": "21.2.7",
+      "id": "main_host:@angular/core/primitives/di",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core/primitives/signals",
+      "version": "21.2.7",
+      "id": "main_host:@angular/core/primitives/signals",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/core",
+      "version": "21.2.7",
+      "id": "main_host:@angular/core",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "eager": true,
+      "name": "@angular/platform-browser",
+      "version": "21.2.7",
+      "id": "main_host:@angular/platform-browser",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "shareScope": "default",
+      "strictVersion": true,
+      "name": "@angular/router",
+      "version": "21.2.7",
+      "eager": false,
+      "id": "main_host:@angular/router",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "163.405907c5.js",
+            "544.a4901776.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^0.0.1",
+      "shareScope": "default",
+      "eager": false,
+      "name": "@nx-mf-df/common-ui-lib",
+      "version": "0.0.1",
+      "id": "main_host:@nx-mf-df/common-ui-lib",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "631.d00e3241.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "usedIn": [],
+      "usedExports": [],
+      "fallback": ""
+    }
+  ],
+  "remotes": [],
+  "exposes": []
+}

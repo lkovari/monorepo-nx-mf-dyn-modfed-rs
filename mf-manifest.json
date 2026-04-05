@@ -1,0 +1,203 @@
+{
+  "id": "main_host",
+  "name": "main_host",
+  "metaData": {
+    "name": "main_host",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "local"
+    },
+    "remoteEntry": {
+      "name": "",
+      "path": "",
+      "type": "module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "main_host",
+    "pluginVersion": "2.3.1",
+    "prefetchInterface": false,
+    "publicPath": "auto"
+  },
+  "shared": [
+    {
+      "id": "main_host:@angular/common/http",
+      "name": "@angular/common/http",
+      "version": "21.2.7",
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "fallback": ""
+    },
+    {
+      "id": "main_host:@angular/common",
+      "name": "@angular/common",
+      "version": "21.2.7",
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "fallback": ""
+    },
+    {
+      "id": "main_host:@angular/core/primitives/di",
+      "name": "@angular/core/primitives/di",
+      "version": "21.2.7",
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "fallback": ""
+    },
+    {
+      "id": "main_host:@angular/core/primitives/signals",
+      "name": "@angular/core/primitives/signals",
+      "version": "21.2.7",
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "fallback": ""
+    },
+    {
+      "id": "main_host:@angular/core",
+      "name": "@angular/core",
+      "version": "21.2.7",
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "fallback": ""
+    },
+    {
+      "id": "main_host:@angular/platform-browser",
+      "name": "@angular/platform-browser",
+      "version": "21.2.7",
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "main.209158bc.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "styles.74762ce0.css"
+          ]
+        }
+      },
+      "fallback": ""
+    },
+    {
+      "id": "main_host:@angular/router",
+      "name": "@angular/router",
+      "version": "21.2.7",
+      "singleton": true,
+      "requiredVersion": "~21.2.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "163.405907c5.js",
+            "544.a4901776.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "fallback": ""
+    },
+    {
+      "id": "main_host:@nx-mf-df/common-ui-lib",
+      "name": "@nx-mf-df/common-ui-lib",
+      "version": "0.0.1",
+      "singleton": true,
+      "requiredVersion": "^0.0.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "631.d00e3241.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "fallback": ""
+    }
+  ],
+  "remotes": [],
+  "exposes": []
+}

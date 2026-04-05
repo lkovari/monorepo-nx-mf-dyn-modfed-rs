@@ -1,0 +1,50 @@
+{
+  "name": "mf_remote_b",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "nxmfdf",
+  "sourceRoot": "apps/mf_remote_b/src",
+  "tags": [],
+  "targets": {
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "mf_remote_b:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "coverage/apps/mf_remote_b"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "mf_remote_b:build",
+        "port": 4202,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mf_remote_b:build:development"
+        },
+        "production": {
+          "buildTarget": "mf_remote_b:build:production"
+        }
+      }
+    },
+    "serve": {
+      "options": {
+        "port": 4202
+      },
+      "dependsOn": ["main-host:serve"]
+    }
+  }
+}
